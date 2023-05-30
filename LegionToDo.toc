@@ -1,0 +1,6 @@
+## Interface: 90200
+## Title: Shadowlands ToDo
+## Author: ykiigor
+## SavedVariables: VLegionToDo
+## Version: 55
+LegionToDo.lua

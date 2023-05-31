@@ -1,6 +1,6 @@
-## Interface: 90200
-## Title: Shadowlands ToDo
-## Author: ykiigor
+## Interface: 100100
+## Title: Dragonflight ToDoDo
+## Author: ykiigor, AJaggens
 ## SavedVariables: VLegionToDo
-## Version: 55
+## Version: 56
 LegionToDo.lua

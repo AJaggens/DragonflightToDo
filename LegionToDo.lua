@@ -1,7 +1,7 @@
 local GlobalAddonName = ...
 
-local VERSION = "5.5"
-local VERSION_NUMERIC = 55
+local VERSION = "6.0"
+local VERSION_NUMERIC = 60
 
 --[[
 v.5.5
@@ -1357,7 +1357,6 @@ tinsert(ToDoFunc,function(self,collect)
 	end
 end)
 
-
 tinsert(ToDoFunc,function(self,collect)
 	local rewardCounter = 1
 	while collect["sl_reward"..rewardCounter] do
@@ -1417,9 +1416,7 @@ tinsert(ToDoFunc,function(self,collect)
 	collect.sl_rewardMax = #data
 end)
 
-
-
-
+-- mkey collection
 tinsert(ToDoFunc,function(self,collect)
 
 	local key = nil
@@ -1429,7 +1426,7 @@ tinsert(ToDoFunc,function(self,collect)
 
 			local iconFileID, stackCount, isLocked, quality, isReadable, hasLoot, hyperlink, isFiltered, hasNoValue, itemID, isBound = GetContainerItemInfo(bag, slot)
 
-			if hyperlink and (hyperlink:find("item:138019") or hyperlink:find("keystone:") or hyperlink:find("item:158923") or hyperlink:find("item:180653")) then
+			if hyperlink and itemID == 180653 then
 				local deep = false
 			
 				inspectScantip:SetBagItem(bag, slot)
@@ -2853,7 +2850,7 @@ end)
 
 LegionToDo.bottomScrollBar:Hide()
 
-
+--scrolling
 LegionToDo:SetScript("OnMouseWheel", function (self,delta)
 	if not LegionToDo.leftScrollBar:IsShown() then
 		return
@@ -2876,7 +2873,7 @@ LegionToDo.Close:SetPoint("TOPRIGHT",3,3)
 
 LegionToDo.title = LegionToDo:CreateFontString(nil,"ARTWORK","GameFontWhite")
 LegionToDo.title:SetPoint("TOPLEFT",30,-10)
-LegionToDo.title:SetText("|cffffff00Shadowlands ToDo "..VERSION)
+LegionToDo.title:SetText("|cffffff00Dragonflight ToDo "..VERSION)
 
 local OPTIONS_TOGGLED = false
 
@@ -4552,6 +4549,7 @@ MiniMapIcon:SetScript("OnMouseUp", function (self, button)
 	end
 end)
 
+--slash cmd list
 SlashCmdList["LTDSlash"] = function(arg)
 	arg = arg:lower()
 	if arg == "reset" then
@@ -4571,6 +4569,7 @@ SLASH_LTDSlash3 = "/bfatodo"
 SLASH_LTDSlash4 = "/btd"
 SLASH_LTDSlash5 = "/sltodo"
 SLASH_LTDSlash6 = "/shadowlandstodo"
+SLASH_LTDSlash7 = "/dftd"
 
 
 local function CreateDataBrokerPlugin(firstCall)
